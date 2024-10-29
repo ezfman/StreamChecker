@@ -20,6 +20,7 @@ export YOUR_TMDB_PROVIDERS="YOUR_STREAMING_PROVIDERS"
 Your TMDB API key and bearer token can be found on the [TMDB website](https://www.themoviedb.org/settings/api?language=en-US) once logged in.
 
 The `TMDB_REGION` variable defaults to "US", and does not need to be set.
+
 The `TMDB_PROVIDERS` variable defaults to "Netflix,Hulu,Peacock,Paramount Plus,Max", and does not need to be set.  If set, it should be a list of comma-separated provider names.
 
 ## CLI Tool
