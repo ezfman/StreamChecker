@@ -125,6 +125,15 @@ def fetch_title(movie_id: int, api_key: str, headers: dict) -> str:
     return response.json().get("title")
 
 
+def fetch_providers(region: str, headers: dict) -> list[str]:
+    url = "https://api.themoviedb.org/3/watch/providers/movie?language=en-US"
+    if region:
+        url += f"&watch_region={region}"
+    response = httpx.get(url, headers = headers)
+    http_handler(response.status_code)
+    return [provider["provider_name"] for provider in response.json().get("results", [])]
+
+
 def main():
     api_key = os.getenv("TMDB_API_KEY")
     api_token = os.getenv("TDB_API_TOKEN")
